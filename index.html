@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anoop Kumar — Full-Stack Developer</title>
+<meta name="description" content="Anoop Kumar — Full-stack developer. Websites, web apps and dashboards for businesses.">
+<meta property="og:title" content="Anoop Kumar — Full-Stack Developer">
+<meta property="og:description" content="Websites, web apps and dashboards for businesses.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0d12; --surface:#141821; --surface-2:#1b2030; --text:#e8ebf2; --muted:#9aa3b5;
+    --accent:#4ade80; --accent-2:#22d3ee; --border:#262c3b; --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.15}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+  .logo{font-family:"Space Grotesk";font-weight:700;font-size:1.2rem}
+  .logo span{color:var(--accent)}
+  .links{display:flex;gap:24px;font-size:.95rem;color:var(--muted)}
+  .links a:hover{color:var(--text)}
+  @media(max-width:640px){.links{display:none}}
+
+  /* hero */
+  .hero{padding:96px 0 72px}
+  .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--border);border-radius:99px;font-size:.85rem;color:var(--muted);margin-bottom:24px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);margin-bottom:20px}
+  .grad{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{font-size:1.15rem;color:var(--muted);max-width:620px;margin-bottom:32px}
+  .btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{padding:13px 24px;border-radius:10px;font-weight:600;font-size:.95rem;transition:.2s}
+  .btn-primary{background:var(--accent);color:#06210f}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(74,222,128,.25)}
+  .btn-ghost{border:1px solid var(--border)}
+  .btn-ghost:hover{background:var(--surface)}
+
+  section{padding:72px 0;border-top:1px solid var(--border)}
+  .label{color:var(--accent);font-size:.85rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+  section h2{font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:36px}
+
+  /* services */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;transition:.2s}
+  .card:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .icon{font-size:1.6rem;margin-bottom:14px}
+  .card h3{font-size:1.15rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.95rem}
+
+  /* skills */
+  .skills{display:flex;flex-wrap:wrap;gap:10px}
+  .skill{padding:9px 16px;background:var(--surface);border:1px solid var(--border);border-radius:99px;font-size:.92rem}
+
+  /* project */
+  .project{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+  @media(max-width:760px){.project{grid-template-columns:1fr}}
+  .status{display:inline-block;padding:4px 12px;border-radius:99px;background:rgba(34,211,238,.12);color:var(--accent-2);font-size:.8rem;font-weight:600;margin-bottom:14px}
+  .project h3{font-size:1.5rem;margin-bottom:12px}
+  .project p{color:var(--muted);margin-bottom:16px}
+  .project ul{list-style:none;display:grid;gap:8px}
+  .project li::before{content:"→ ";color:var(--accent)}
+  .mock{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:18px;font-size:.85rem}
+  .mock-bar{display:flex;gap:6px;margin-bottom:14px}
+  .mock-bar i{width:10px;height:10px;border-radius:50%;background:var(--border)}
+  .row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--border)}
+  .row:last-child{border:none}
+  .paid{color:var(--accent)} .due{color:#f87171}
+
+  /* contact */
+  .contact{text-align:center}
+  .contact p{color:var(--muted);max-width:520px;margin:0 auto 28px}
+  .contact .btns{justify-content:center}
+  footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">anoop<span>.dev</span></a>
+    <div class="links">
+      <a href="#services">Services</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="tag"><span class="dot"></span> Available for freelance work</div>
+    <h1>Hi, I'm Anoop Kumar.<br><span class="grad">I build web apps that work for your business.</span></h1>
+    <p>Full-stack developer helping local businesses, coaching centres and startups go online — fast websites, custom dashboards and tools that save time and bring customers.</p>
+    <div class="btns">
+      <a class="btn btn-primary js-whatsapp" href="#" target="_blank">Chat on WhatsApp</a>
+      <a class="btn btn-ghost" href="#work">See my work</a>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <div class="label">What I do</div>
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card"><div class="icon">🌐</div><h3>Business Websites</h3><p>Fast, mobile-friendly websites for shops, gyms, clinics and coaching centres — with WhatsApp & Google Maps built in.</p></div>
+      <div class="card"><div class="icon">⚙️</div><h3>Custom Web Apps</h3><p>Booking systems, inventory, billing, student or member management — built around how your business actually works.</p></div>
+      <div class="card"><div class="icon">📊</div><h3>Dashboards & Admin Panels</h3><p>See sales, fees, attendance or orders in one place instead of registers and scattered Excel sheets.</p></div>
+      <div class="card"><div class="icon">🛠️</div><h3>Fixes & Automation</h3><p>Bug fixes, speed improvements, scripts that automate boring repetitive work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="label">Toolbox</div>
+    <h2>Skills</h2>
+    <div class="skills">
+      <span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span>
+      <span class="skill">TypeScript</span><span class="skill">React</span><span class="skill">Next.js</span>
+      <span class="skill">Node.js</span><span class="skill">Express</span><span class="skill">Python</span>
+      <span class="skill">MongoDB</span><span class="skill">MySQL</span><span class="skill">REST APIs</span>
+      <span class="skill">Git & GitHub</span><span class="skill">Tailwind CSS</span>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="label">Work</div>
+    <h2>Projects</h2>
+    <div class="project">
+      <div>
+        <span class="status">● In progress</span>
+        <h3>Coaching Centre Manager</h3>
+        <p>A full-stack app that replaces registers and Excel for coaching & tuition centres.</p>
+        <ul>
+          <li>Student records & batches</li>
+          <li>Fee tracking with pending-fee alerts</li>
+          <li>Daily attendance</li>
+          <li>WhatsApp fee reminders</li>
+        </ul>
+      </div>
+      <div class="mock" aria-hidden="true">
+        <div class="mock-bar"><i></i><i></i><i></i></div>
+        <div class="row"><span>Rahul S. — Batch A</span><span class="paid">Paid</span></div>
+        <div class="row"><span>Priya M. — Batch B</span><span class="due">Due ₹1,500</span></div>
+        <div class="row"><span>Aman K. — Batch A</span><span class="paid">Paid</span></div>
+        <div class="row"><span>Neha R. — Batch C</span><span class="due">Due ₹2,000</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="label">Contact</div>
+    <h2>Let's build something</h2>
+    <p>Need a website or app for your business? Message me — I usually reply within a few hours.</p>
+    <div class="btns">
+      <a class="btn btn-primary js-whatsapp" href="#" target="_blank">WhatsApp</a>
+      <a class="btn btn-ghost js-email" href="#">Email</a>
+      <a class="btn btn-ghost js-github" href="#" target="_blank">GitHub</a>
+      <a class="btn btn-ghost js-linkedin" href="#" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Anoop Kumar. Built from scratch.</footer>
+
+<script>
+  /* ===== EDIT ONLY THIS PART ===== */
+  const CONFIG = {
+    whatsapp: "918077712232",            // country code + number, no + or spaces
+    email:    "anooptaliyan@gmail.com",
+    github:   "https://github.com/AnoopTaliyan",
+    linkedin: "https://www.linkedin.com/in/anoop-taliyan-32b3531a1/"
+  };
+  /* =============================== */
+
+  const msg = encodeURIComponent("Hi Anoop, I saw your portfolio and want to discuss a project.");
+  document.querySelectorAll(".js-whatsapp").forEach(a => a.href = `https://wa.me/${CONFIG.whatsapp}?text=${msg}`);
+  document.querySelectorAll(".js-email").forEach(a => a.href = `mailto:${CONFIG.email}`);
+  document.querySelectorAll(".js-github").forEach(a => CONFIG.github ? a.href = CONFIG.github : a.remove());
+  document.querySelectorAll(".js-linkedin").forEach(a => a.href = CONFIG.linkedin);
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
