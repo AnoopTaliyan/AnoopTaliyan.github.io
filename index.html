@@ -63,6 +63,8 @@
 
   /* project */
   .project{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+  .project + .project{margin-top:22px}
+  .status.live{background:rgba(74,222,128,.12);color:var(--accent)}
   @media(max-width:760px){.project{grid-template-columns:1fr}}
   .status{display:inline-block;padding:4px 12px;border-radius:99px;background:rgba(34,211,238,.12);color:var(--accent-2);font-size:.8rem;font-weight:600;margin-bottom:14px}
   .project h3{font-size:1.5rem;margin-bottom:12px}
@@ -158,6 +160,30 @@
         <div class="row"><span>Priya M. — Batch B</span><span class="due">Due ₹1,500</span></div>
         <div class="row"><span>Aman K. — Batch A</span><span class="paid">Paid</span></div>
         <div class="row"><span>Neha R. — Batch C</span><span class="due">Due ₹2,000</span></div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div>
+        <span class="status live">● Live</span>
+        <h3>AVR Bricks</h3>
+        <p>A bilingual (Hindi / English) website for a red clay brick kiln, built for a real client to get orders straight on WhatsApp.</p>
+        <ul>
+          <li>Hindi / English toggle</li>
+          <li>Brick grades: First, Second & Third class</li>
+          <li>Brick calculator from wall size</li>
+          <li>One-tap WhatsApp ordering & Google Maps</li>
+        </ul>
+        <div class="btns" style="margin-top:20px">
+          <a class="btn btn-ghost" href="https://avr-bricks.onrender.com" target="_blank" rel="noopener">View live site →</a>
+        </div>
+      </div>
+      <div class="mock" aria-hidden="true">
+        <div class="mock-bar"><i></i><i></i><i></i></div>
+        <div class="row"><span>Wall: 10 ft × 9 ft</span><span>9" thick</span></div>
+        <div class="row"><span>Bricks needed</span><span class="paid">≈ 950</span></div>
+        <div class="row"><span>Grade</span><span>First Class</span></div>
+        <div class="row"><span>Order</span><span class="paid">WhatsApp ✓</span></div>
       </div>
     </div>
   </div>
